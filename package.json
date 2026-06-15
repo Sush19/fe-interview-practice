@@ -1,0 +1,14 @@
+{
+  "name": "fe-interview-practice",
+  "version": "1.0.0",
+  "description": "Frontend interview practice questions with automated tests",
+  "main": "runner.js",
+  "scripts": {
+    "test": "node runner.js",
+    "test:js": "node runner.js --topic javascript",
+    "test:react": "node runner.js --topic react",
+    "test:watch": "node runner.js --watch"
+  },
+  "keywords": ["frontend", "interview", "practice", "javascript"],
+  "license": "MIT"
+}

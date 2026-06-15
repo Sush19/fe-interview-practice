@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+  QUESTION CSS-1 — Centering (Easy)
+  ─────────────────────────────────────────────────────────
+  Center the .box element both horizontally and vertically
+  inside .container using THREE different methods.
+
+  Instructions:
+  1. Complete Method 1 using Flexbox
+  2. Complete Method 2 using CSS Grid
+  3. Complete Method 3 using position: absolute
+
+  Open this file in a browser to visually verify your solutions.
+  Each container should show a perfectly centered blue box.
+
+  Your solution → solutions/css/01-centering.html (copy this file there)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Centering — 3 Methods</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; background: #f5f5f5; }
+    h2 { font-size: 14px; color: #666; margin-bottom: 8px; }
+
+    .container {
+      width: 300px;
+      height: 200px;
+      background: #e0e0e0;
+      margin-bottom: 2rem;
+      border: 2px dashed #aaa;
+    }
+
+    .box {
+      width: 80px;
+      height: 80px;
+      background: steelblue;
+      color: white;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── METHOD 1: Flexbox ────────────────────────────── */
+    .method-1 {
+      /* YOUR CODE HERE */
+    }
+
+    /* ── METHOD 2: Grid ──────────────────────────────── */
+    .method-2 {
+      /* YOUR CODE HERE */
+    }
+
+    /* ── METHOD 3: Absolute Positioning ─────────────── */
+    .method-3 {
+      /* YOUR CODE HERE — hint: you'll need position: relative */
+    }
+    .method-3 .box {
+      /* YOUR CODE HERE */
+    }
+  </style>
+</head>
+<body>
+  <h2>Method 1 — Flexbox</h2>
+  <div class="container method-1">
+    <div class="box">Flex</div>
+  </div>
+
+  <h2>Method 2 — Grid</h2>
+  <div class="container method-2">
+    <div class="box">Grid</div>
+  </div>
+
+  <h2>Method 3 — Absolute</h2>
+  <div class="container method-3">
+    <div class="box">Abs</div>
+  </div>
+</body>
+</html>
