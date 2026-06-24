@@ -52,7 +52,7 @@ npm run test:watch
 
 ## 🗂️ Question Index
 
-### JavaScript (10 questions)
+### JavaScript (16 questions)
 | # | File | Difficulty | Topic |
 |---|------|-----------|-------|
 | 1 | `questions/javascript/01-debounce.js` | Easy | Closures, Timers |
@@ -65,6 +65,12 @@ npm run test:watch
 | 8 | `questions/javascript/08-memoize.js` | Medium | Closures, Caching |
 | 9 | `questions/javascript/09-async-scheduler.js` | Hard | Async, Queues |
 | 10 | `questions/javascript/10-virtual-dom-diff.js` | Hard | Trees, Algorithms |
+| 11 | `questions/javascript/11-currying.js` | Medium | Currying |
+| 12 | `questions/javascript/12-call-apply-bind.js` | Medium | `this`, Function context |
+| 13 | `questions/javascript/13-compose-pipe.js` | Medium | Closures, Functional |
+| 14 | `questions/javascript/14-array-polyfills.js` | Easy | Prototypes, Arrays |
+| 15 | `questions/javascript/15-deep-equal.js` | Medium | Recursion, Objects |
+| 16 | `questions/javascript/16-closures.js` | Easy | Closures, Private state |
 
 ### CSS (3 questions)
 | # | File | Difficulty |
