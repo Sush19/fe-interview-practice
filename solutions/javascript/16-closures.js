@@ -4,11 +4,25 @@
  */
 
 function createCounter(initial = 0) {
-  // YOUR CODE HERE
+  let count = initial;
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    reset: () => (count = initial),
+    value: () => count,
+  };
 }
 
 function once(fn) {
-  // YOUR CODE HERE
+  let called = false;
+  let result;
+  return function (...args) {
+    if (!called) {
+      called = true;
+      result = fn.apply(this, args);
+    }
+    return result;
+  };
 }
 
 module.exports = { createCounter, once };

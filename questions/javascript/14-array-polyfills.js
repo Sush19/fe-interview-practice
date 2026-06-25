@@ -26,3 +26,48 @@
  *
  * Your solution → solutions/javascript/14-array-polyfills.js
  */
+
+function myMap(arr, callback) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(callback(arr[i], i, arr));
+  }
+  return result;
+}
+
+console.log(myMap([1, 2, 3], (x) => x * 2)); // [2, 4, 6]
+
+function myFilter(arr, callback) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i, arr)) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+
+console.log(myFilter([1, 2, 3, 4], (x) => x % 2 === 0)); // [2, 4]
+
+function myReduce(arr, callback, initialValue) {
+  let accumulator;
+  let startIndex;
+
+  if (arguments.length >= 3) {
+    // initial value WAS provided
+    accumulator = initialValue;
+    startIndex = 0;
+  } else {
+    // no initial value
+    accumulator = arr[0];
+    startIndex = 1;
+  }
+
+  for (let i = startIndex; i < arr.length; i++) {
+    accumulator = callback(accumulator, arr[i], i, arr);
+  }
+  return accumulator;
+}
+
+console.log(myReduce([1, 2, 3], (acc, x) => acc + x, 0)); // 6
+console.log(myReduce([1, 2, 3], (acc, x) => acc + x)); // 6 (no initial value)

@@ -4,7 +4,21 @@
  */
 
 function debounce(fn, delay) {
-  // YOUR CODE HERE
+  let timerId = null;
+  function debounced(...args) {
+    clearTimeout(timerId);
+
+    timerId = setTimeout(() => {
+      fn.apply(this, args);
+    }, delay);
+  }
+
+  debounced.cancel = () => {
+    clearTimeout(timerId);
+    timerId = null;
+  };
+
+  return debounced;
 }
 
 module.exports = { debounce };

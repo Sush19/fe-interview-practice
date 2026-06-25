@@ -25,3 +25,26 @@
  *
  * Your solution → solutions/javascript/01-debounce.js
  */
+
+function debounce(fn, delay) {
+  let timerId = null;
+  function debounced(...args) {
+    clearTimeout(timerId);
+
+    timerId = setTimeout(() => {
+      fn.apply(this, args);
+    }, delay);
+  }
+
+  debounced.cancel = () => {
+    clearTimeout(timerId);
+    timerId = null;
+  };
+
+  return debounced;
+}
+
+const log = debounce((msg) => console.log(msg), 500);
+log('a'); // timer starts
+log('b'); // timer resets
+// 500ms later → logs 'b'  (only once)
