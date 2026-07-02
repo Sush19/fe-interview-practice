@@ -27,6 +27,29 @@
  */
 
 function debounce(fn, delay) {
+    let timerId;
+    
+    return function(...arg) {
+        clearTimeout(timerId);
+        timerId = setTimeout(() => {
+            fn(...arg);
+        }, delay)
+    }
+}
+
+const searchString = debounce((str) => console.log('searching for', str), 500);
+
+searchString('a');
+searchString('ap');
+searchString('app');
+searchString('appl');
+searchString('apple');
+
+// Ouput: searching for apple
+
+/* *------------------------------------------------------------* */
+
+function debounce2(fn, delay) {
   let timerId = null;
   function debounced(...args) {
     clearTimeout(timerId);
@@ -44,7 +67,7 @@ function debounce(fn, delay) {
   return debounced;
 }
 
-const log = debounce((msg) => console.log(msg), 500);
+const log = debounce2((msg) => console.log(msg), 500);
 log('a'); // timer starts
 log('b'); // timer resets
 // 500ms later → logs 'b'  (only once)
